@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.lang.Math;
 
 public class movieRating {
     public static void main(String[] args) {
@@ -21,8 +22,20 @@ public class movieRating {
         System.out.println("Please enter the average movie critic rating.");
         double criticRating = userInput.nextDouble();
 
-        System.out.println("Title: " + movieName);
-        System.out.println("Running Time: ");
+        // Math for getting the movie's runtime in hours and minutes
+        int movieRemainder = movieMinutes % 60;
+        int movieHours = (movieMinutes - movieRemainder) / 60;
 
+        // Math for the rating's weighted average
+        double ratingAverage = (movieRating_1 + movieRating_2 + movieRating_3) / 3.0;
+        double focusAverage = (focusRating_1 + focusRating_2) / 2.0;
+        double weightedAverage = (ratingAverage * 0.2) + (focusAverage * 0.3) + (criticRating * 0.5);
+
+        System.out.println("Title: " + movieName);
+        System.out.println("Running Time: " + movieHours + "h " + movieRemainder);
+        System.out.println("Average website rating: " + ratingAverage);
+        System.out.println("Average focus group rating: " + focusAverage);
+        System.out.println("Average movie critic rating: " + criticRating);
+        System.out.println("Overall movie rating: " + Math.round(weightedAverage));
     }
 }
