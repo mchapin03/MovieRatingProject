@@ -32,7 +32,7 @@ public class movieRating {
         double weightedAverage = (ratingAverage * 0.2) + (focusAverage * 0.3) + (criticRating * 0.5);
 
         System.out.println("Title: " + movieName);
-        System.out.println("Running Time: " + movieHours + "h " + movieRemainder);
+        System.out.println("Running Time: " + movieHours + "h" + movieRemainder);
         System.out.println("Average website rating: " + ratingAverage);
         System.out.println("Average focus group rating: " + focusAverage);
         System.out.println("Average movie critic rating: " + criticRating);
